@@ -13,11 +13,11 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.x
-      - name: Restore project dependencies
-        run: dotnet restore .\TealInc.PostHogClient.sln
-      - name: Build project
-        run: dotnet build .\TealInc.PostHogClient.sln --no-restore --configuration Release
-      - name: Pack project
-        run: dotnet pack .\TealInc.PostHogClient.sln --no-build --configuration Release --include-symbols -p:SymbolPackageFormat=snupkg -o .
-      - name: Publish package to NuGet
+      - name: Restore dependencies
+        run: dotnet restore TealInc.PostHogClient.sln
+      - name: Build solution
+        run: dotnet build TealInc.PostHogClient.sln --no-restore --configuration Release
+      - name: Pack solution
+        run: dotnet pack TealInc.PostHogClient.sln --no-build --configuration Release --include-symbols -p:SymbolPackageFormat=snupkg -o .
+      - name: Publish packages to NuGet
         run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_PUBLISH_KEY}} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
