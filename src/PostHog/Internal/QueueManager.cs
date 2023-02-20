@@ -68,8 +68,6 @@ internal sealed class QueueManager : PeriodicTask, IQueueManager
             {
                 _internalLogger.Log(InternalLogLevel.Error, "Error occured while sending batch request:", e);
             }
-
-            throw;
         }
     }
 }
