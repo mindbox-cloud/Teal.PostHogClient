@@ -14,10 +14,10 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello PostHog!");
 
-app.MapGet("/event", (HttpContext context, IPostHogClient postHog) =>
+app.MapGet("/event", (IPostHogClient postHog) =>
 {
-    var ipAddress = (context.Connection.RemoteIpAddress ?? context.Connection.LocalIpAddress)?.ToString() ?? "Unknown";
-    postHog.Capture(new CaptureRequest(ipAddress, "TestEvent"));
+    var captureRequest = new CaptureRequest("WebUser", "TestEvent");
+    postHog.Capture(captureRequest);
 });
 
 app.Run();
