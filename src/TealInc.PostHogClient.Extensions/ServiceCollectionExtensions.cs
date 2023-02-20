@@ -1,5 +1,5 @@
-﻿using PostHog;
-using PostHog.Internal;
+﻿using TealInc.PostHogClient;
+using TealInc.PostHogClient.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;

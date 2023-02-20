@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace PostHog.Internal;
+namespace TealInc.PostHogClient.Internal;
 
 public sealed class PostHogEventBatch
 {

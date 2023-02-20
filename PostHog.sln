@@ -2,17 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3B1B7A62-5E98-4B25-A67F-6877A83122CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostHog", "src\PostHog\PostHog.csproj", "{547CD884-D173-4D0F-990D-0E581BD9CE11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TealInc.PostHogClient", "src\TealInc.PostHogClient\TealInc.PostHogClient.csproj", "{547CD884-D173-4D0F-990D-0E581BD9CE11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{7A4055B2-DB29-49FF-B72A-B95B7C4F5071}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NETCore", "example\ASP.NETCore\ASP.NETCore.csproj", "{C9356963-F957-477D-96E3-769C6D6E8718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostHog.Extensions.Microsoft.DependencyInjection", "src\PostHog.Extensions.Microsoft.DependencyInjection\PostHog.Extensions.Microsoft.DependencyInjection.csproj", "{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8FDDE9C6-2918-49A3-BA8B-42B62F1B384C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostHog.Tests", "tests\PostHog.Tests\PostHog.Tests.csproj", "{318FC5B8-D4B0-4745-9C53-F00016F71D75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TealInc.PostHogClient.Extensions", "src\TealInc.PostHogClient.Extensions\TealInc.PostHogClient.Extensions.csproj", "{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,7 +19,6 @@ Global
 		{547CD884-D173-4D0F-990D-0E581BD9CE11} = {3B1B7A62-5E98-4B25-A67F-6877A83122CF}
 		{C9356963-F957-477D-96E3-769C6D6E8718} = {7A4055B2-DB29-49FF-B72A-B95B7C4F5071}
 		{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC} = {3B1B7A62-5E98-4B25-A67F-6877A83122CF}
-		{318FC5B8-D4B0-4745-9C53-F00016F71D75} = {8FDDE9C6-2918-49A3-BA8B-42B62F1B384C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{547CD884-D173-4D0F-990D-0E581BD9CE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,9 +33,5 @@ Global
 		{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39F3110A-699F-4F77-A7D1-A7F6C9FBB4AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{318FC5B8-D4B0-4745-9C53-F00016F71D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{318FC5B8-D4B0-4745-9C53-F00016F71D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{318FC5B8-D4B0-4745-9C53-F00016F71D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{318FC5B8-D4B0-4745-9C53-F00016F71D75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

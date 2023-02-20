@@ -1,6 +1,4 @@
-﻿using PostHog.Internal;
-
-namespace PostHog;
+﻿namespace TealInc.PostHogClient;
 
 public sealed class PostHogOptions
 {

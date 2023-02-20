@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PostHog\PostHog.csproj" />
+      <ProjectReference Include="..\TealInc.PostHogClient\TealInc.PostHogClient.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
 
-namespace PostHog.Internal;
+namespace TealInc.PostHogClient.Internal;
 
 public interface IPostHogApi
 {

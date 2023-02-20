@@ -1,11 +1,11 @@
-using PostHog;
+using TealInc.PostHogClient;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 services.AddPostHog(options =>
 {
-    options.ApiKey = "phc_jodH1ObqDzOtkci4Ve2fDImjmhBYWb6LnjCMG9zLk8u";
+    options.ApiKey = "<your_api_key>";
     options.FlushInterval = TimeSpan.FromSeconds(1);
 });
 

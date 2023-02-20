@@ -1,4 +1,4 @@
-﻿namespace PostHog;
+﻿namespace TealInc.PostHogClient;
 
 public sealed record CaptureRequest(string DistinctId, string Event)
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using PostHog.Internal;
+using TealInc.PostHogClient.Internal;
 
-namespace PostHog;
+namespace TealInc.PostHogClient;
 
 public sealed class PostHogClient : IPostHogClient, IAsyncDisposable
 {

@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\PostHog.Extensions.Microsoft.DependencyInjection\PostHog.Extensions.Microsoft.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\src\TealInc.PostHogClient.Extensions\TealInc.PostHogClient.Extensions.csproj" />
     </ItemGroup>
 
 </Project>
