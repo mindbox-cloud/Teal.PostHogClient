@@ -4,6 +4,13 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>TealInc.PostHogClient</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Lipatov Alexander</Authors>
+        <Company>Teal.Inc</Company>
+        <Description>PostHog .NET Library</Description>
+        <PackageProjectUrl>https://github.com/teal-inc/PostHogClient</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/teal-inc/PostHogClient</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
