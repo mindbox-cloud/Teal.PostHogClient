@@ -1,5 +1,4 @@
 ﻿using PostHog;
-using PostHog.AspNetCore;
 using PostHog.Internal;
 
 // ReSharper disable once CheckNamespace
@@ -12,15 +11,12 @@ public static class PostHogConfiguration
         var options = new PostHogOptions();
         configure(options);
         
+        services.AddHttpClient();
+        
         services.AddSingleton(options);
-        services.AddSingleton<IInternalLogger, MicrosoftLoggerAdaptor>();
         services.AddSingleton<IPostHogApi, PostHogApi>();
         services.AddSingleton<IQueueManager, QueueManager>();
-        services.AddSingleton<IPostHogClient, PostHogClient>(
-            sp => new PostHogClient(
-                sp.GetRequiredService<IQueueManager>(),
-                sp.GetRequiredService<IInternalLogger>())
-        );
+        services.AddSingleton<IPostHogClient, PostHogClient>();
 
         return services;
     }

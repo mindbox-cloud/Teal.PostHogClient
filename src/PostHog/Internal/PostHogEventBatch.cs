@@ -2,7 +2,7 @@
 
 namespace PostHog.Internal;
 
-internal sealed class PostHogEventBatch
+public sealed class PostHogEventBatch
 {
     public PostHogEventBatch(string apiKey, ICollection<PostHogEvent> batch)
     {

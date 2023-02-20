@@ -1,32 +1,33 @@
 ﻿using System.Net.Http.Json;
+using Microsoft.Extensions.Logging;
 
 namespace PostHog.Internal;
 
-internal interface IPostHogApi
+public interface IPostHogApi
 {
     Task BatchAsync(PostHogEventBatch batch);
 }
 
-internal sealed class PostHogApi : IPostHogApi
+public sealed class PostHogApi : IPostHogApi
 {
     private readonly HttpClient _httpClient;
-    private readonly IInternalLogger _internalLogger;
+    private readonly ILogger<PostHogApi> _logger;
+    
+    private readonly Uri _batchUri;
 
-    public PostHogApi(PostHogOptions options, IInternalLogger internalLogger)
+    public PostHogApi(PostHogOptions options, ILogger<PostHogApi> logger, HttpClient httpClient)
     {
-        _internalLogger = internalLogger;
-        _httpClient = options.HttpClientFactory();
-        _httpClient.BaseAddress = new Uri(options.Host);
+        _logger = logger;
+        _httpClient = httpClient;
+        var baseUri = new Uri(options.Host);
+        _batchUri = new Uri(baseUri, "/batch");
     }
 
     public async Task BatchAsync(PostHogEventBatch batch)
     {
-        var responseMessage = await _httpClient.PostAsJsonAsync("/batch", batch);
+        var responseMessage = await _httpClient.PostAsJsonAsync(_batchUri, batch);
         responseMessage.EnsureSuccessStatusCode();
-
-        if (_internalLogger.IsEnabled(InternalLogLevel.Debug))
-        {
-            _internalLogger.Log(InternalLogLevel.Debug, "Sent batch of {0} events", null, batch.Batch.Count);
-        }
+        
+        _logger.LogDebug("Sent batch of {Count} events", batch.Batch.Count);
     }
 }

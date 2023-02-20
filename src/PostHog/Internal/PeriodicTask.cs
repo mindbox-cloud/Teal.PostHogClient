@@ -1,6 +1,6 @@
 ﻿namespace PostHog.Internal;
 
-internal abstract class PeriodicTask
+public abstract class PeriodicTask
 {
     private Task _timerTask = default!;
     private readonly PeriodicTimer _timer;

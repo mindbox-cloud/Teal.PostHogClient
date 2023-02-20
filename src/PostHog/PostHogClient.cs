@@ -1,44 +1,26 @@
-﻿using PostHog.Internal;
+﻿using Microsoft.Extensions.Logging;
+using PostHog.Internal;
 
 namespace PostHog;
 
 public sealed class PostHogClient : IPostHogClient, IAsyncDisposable
 {
     private readonly IQueueManager _queueManager;
-    private readonly IInternalLogger _internalLogger;
+    private readonly ILogger<PostHogClient> _logger;
 
-    internal PostHogClient(IQueueManager queueManager, IInternalLogger internalLogger)
+    public PostHogClient(IQueueManager queueManager, ILogger<PostHogClient> logger)
     {
         _queueManager = queueManager;
-        _internalLogger = internalLogger;
+        _logger = logger;
         
-        if (_internalLogger.IsEnabled(InternalLogLevel.Debug))
-        {
-            _internalLogger.Log(InternalLogLevel.Debug, "Started listening for events");
-        }
-    }
-
-    public PostHogClient(PostHogOptions options)
-    {
-        _internalLogger = new ConsoleLogger(options);
-        
-        var postHogApi = new PostHogApi(options, _internalLogger);
-        _queueManager = new QueueManager(options, postHogApi, _internalLogger);
-
-        if (_internalLogger.IsEnabled(InternalLogLevel.Debug))
-        {
-            _internalLogger.Log(InternalLogLevel.Debug, "Started listening for events");
-        }
+        _logger.LogDebug("Started listening for events");
     }
 
     public async ValueTask DisposeAsync()
     {
         await _queueManager.StopAsync();
 
-        if (_internalLogger.IsEnabled(InternalLogLevel.Debug))
-        {
-            _internalLogger.Log(InternalLogLevel.Debug, "Stopped listening for events");
-        }
+        _logger.LogDebug("Stopped listening for events");
     }
 
     public void Capture(CaptureRequest request)

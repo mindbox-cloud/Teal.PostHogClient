@@ -5,8 +5,7 @@ var services = builder.Services;
 
 services.AddPostHog(options =>
 {
-    options.ApiKey = "<your_api_key>";
-    options.Debug = true;
+    options.ApiKey = "phc_jodH1ObqDzOtkci4Ve2fDImjmhBYWb6LnjCMG9zLk8u";
     options.FlushInterval = TimeSpan.FromSeconds(1);
 });
 
