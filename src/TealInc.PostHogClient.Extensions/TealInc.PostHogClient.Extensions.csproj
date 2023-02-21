@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>TealInc.PostHogClient.Extensions</PackageId>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <Authors>Lipatov Alexander</Authors>
         <Company>Teal.Inc</Company>
         <Description>PostHog .NET Library Extensions</Description>
